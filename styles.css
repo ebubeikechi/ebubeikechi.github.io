@@ -94,3 +94,22 @@ button:active {
 .view-section {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
+/**************************************************************
+ RESPONSIVE TYPOGRAPHY OVERRIDES
+**************************************************************/
+/* Targets mobile phones and small tablets up to 768px wide */
+@media screen and (max-width: 768px) {
+  html {
+    /* Drops the baseline text scale down by ~10% */
+    font-size: 90% !important; 
+  }
+}
+
+/* Optional: Extra aggressive scaling for very small mobile phones */
+@media screen and (max-width: 480px) {
+  html {
+    /* Drops baseline scale down to 85% */
+    font-size: 85% !important; 
+  }
+}
