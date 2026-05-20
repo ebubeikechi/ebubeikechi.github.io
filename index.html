@@ -1,34 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Screen Embedded Site</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden; /* Prevents double scrollbars */
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block; /* Removes tiny bottom gap caused by inline elements */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Ebube Ikechi // Systems Specialist Portfolio</title>
+  
+  <!-- Tailwind CSS Engine Engine Engine CDN Framework -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Embedded Global External Stylesheet Reference Override -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .premium-gradient-text {
+      background: linear-gradient(135deg, #60a5fa 0%, #a5b4fc 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
 </head>
-<body>
+<body class="text-slate-100 min-h-screen relative font-sans">
 
-    <iframe 
-        src="https://script.google.com/macros/s/AKfycbx9XUNqpqPYEt1z3HFRpvrtmWDiO6q22oxHTmn99OIr2_jG2cXauIW9OQrlMydr8IXF/exec" 
-        title="Full Screen Embedded Content">
-    </iframe>
+  <!-- ==========================================================
+       TOP PORTAL HEADER LAYER (Highly Adaptive layout anchor)
+       ========================================================== -->
+  <nav class="fixed top-0 left-0 w-full z-50 p-4 sm:p-6 select-none pointer-events-none">
+    <div class="flex flex-row items-center gap-2 sm:gap-3 max-w-full pointer-events-auto">
+      
+      <!-- MASTER MENU TRIGGER -->
+      <button onclick="togglePremiumMenu()" id="menuButton" aria-expanded="false" class="flex items-center gap-1.5 sm:gap-2.5 text-white bg-slate-900/80 hover:bg-white/10 active:scale-95 border border-white/10 px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full font-semibold text-xs sm:text-sm backdrop-blur-xl saturate-150 transition-all duration-300 group shadow-lg shrink-0">
+        <div class="relative w-3.5 h-3 sm:w-4 sm:h-3.5 flex flex-col justify-between items-center transition-transform duration-300">
+          <span id="menuLine1" class="w-3.5 sm:w-4 h-0.5 bg-white rounded-full transition-all duration-300 origin-top-left"></span>
+          <span id="menuLine2" class="w-3.5 sm:w-4 h-0.5 bg-white rounded-full transition-all duration-300"></span>
+          <span id="menuLine3" class="w-3.5 sm:w-4 h-0.5 bg-white rounded-full transition-all duration-300 origin-bottom-left"></span>
+        </div>
+        <span>Menu</span>
+      </button>
 
+      <!-- HORIZONTAL LINK SYSTEM -->
+      <div id="premiumHorizontalStack" class="hidden opacity-0 pointer-events-none -translate-x-2 flex flex-row items-center gap-1.5 sm:gap-2 transition-all duration-300 ease-out transform text-[11px] sm:text-sm">
+        <button onclick="switchView('home')" class="flex items-center justify-center gap-1 sm:gap-2 text-slate-200 hover:text-white bg-slate-950/40 hover:bg-white/10 border border-white/5 hover:border-white/20 px-3 py-2 sm:px-5 sm:py-2.5 rounded-full font-medium backdrop-blur-xl saturate-150 transition-all duration-300 shadow-md whitespace-nowrap tracking-wide">
+          ✨ Home
+        </button>
+        <button onclick="switchView('about')" class="flex items-center justify-center gap-1 sm:gap-2 text-slate-200 hover:text-white bg-slate-950/40 hover:bg-white/10 border border-white/5 hover:border-white/20 px-3 py-2 sm:px-5 sm:py-2.5 rounded-full font-medium backdrop-blur-xl saturate-150 transition-all duration-300 shadow-md whitespace-nowrap tracking-wide">
+          📖 About<span class="hidden sm:inline"> Me</span>
+        </button>
+        <button onclick="switchView('skills')" class="flex items-center justify-center gap-1 sm:gap-2 text-slate-200 hover:text-white bg-slate-950/40 hover:bg-white/10 border border-white/5 hover:border-white/20 px-3 py-2 sm:px-5 sm:py-2.5 rounded-full font-medium backdrop-blur-xl saturate-150 transition-all duration-300 shadow-md whitespace-nowrap tracking-wide">
+          📊 Toolkit
+        </button>
+        <button onclick="switchView('initiatives')" class="flex items-center justify-center gap-1 sm:gap-2 text-slate-200 hover:text-white bg-slate-950/40 hover:bg-white/10 border border-white/5 hover:border-white/20 px-3 py-2 sm:px-5 sm:py-2.5 rounded-full font-medium backdrop-blur-xl saturate-150 transition-all duration-300 shadow-md whitespace-nowrap tracking-wide">
+          💡 Initiatives
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ==========================================================
+       MAIN EXPERIENCE HUB LAYOUT BLOCK CONTAINER
+       ========================================================== -->
+  <main class="w-full min-h-screen pt-24 pb-16 px-4 sm:px-6 md:px-8 flex items-start sm:items-center justify-center relative z-10">
+
+    <!-- VIEW 1: HOME / HERO VIEW -->
+    <div id="view-home" class="view-section opacity-100 flex flex-col justify-center items-center w-full max-w-5xl py-4">
+      
+      <div class="w-full text-center px-4 py-3 rounded-2xl border border-blue-500/10 bg-blue-500/5 backdrop-blur-xl max-w-2xl mx-auto shadow-xl shadow-blue-500/5">
+        <span class="text-[10px] sm:text-xs font-bold tracking-[0.15em] sm:tracking-[0.25em] uppercase text-blue-400/90 block leading-relaxed">
+          Clearing • Settlement • Reconciliation Specialist • Pianist
+        </span>
+      </div>
+
+      <h1 class="mt-8 text-4xl sm:text-5xl md:text-7xl font-black leading-[1.1] tracking-tight uppercase text-white/90 text-center select-none">
+        EBUBE <span class="premium-gradient-text font-extrabold">IKECHI</span>
+      </h1>
+
+      <p class="mt-6 text-sm sm:text-base text-slate-400 leading-relaxed max-w-xl mx-auto text-center font-medium tracking-wide">
+        I build systems that simplify work, reduce repetition, and improve operational efficiency through 
+        <span class="text-white font-semibold">Excel & Google Sheets Automation</span>, 
+        <span class="text-white font-semibold">C# Console Apps</span>, 
+        <span class="text-white font-semibold">SQL</span>, and scalable process-driven solutions.
+      </p>
+
+      <!-- MOBILE DIRECT NAVIGATION QUICK CARDS PANEL -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-12 w-full max-w-2xl xl:hidden">
+        <button onclick="switchView('about')" class="text-left p-4 bg-slate-900/60 border border-white/5 rounded-2xl hover:border-blue-500/30 transition-all group">
+          <span class="text-[9px] font-bold tracking-widest text-blue-400 uppercase block mb-1">01 // Story</span>
+          <span class="text-sm font-bold text-white flex justify-between items-center">Read Journey <span class="group-hover:translate-x-1 transition-transform">&rarr;</span></span>
+        </button>
+        <button onclick="switchView('skills')" class="text-left p-4 bg-slate-900/60 border border-white/5 rounded-2xl hover:border-indigo-500/30 transition-all group">
+          <span class="text-[9px] font-bold tracking-widest text-indigo-400 uppercase block mb-1">02 // Stack</span>
+          <span class="text-sm font-bold text-white flex justify-between items-center">View Toolkit <span class="group-hover:translate-x-1 transition-transform">&rarr;</span></span>
+        </button>
+        <button onclick="switchView('initiatives')" class="text-left p-4 bg-slate-900/60 border border-white/5 rounded-2xl hover:border-purple-500/30 transition-all group">
+          <span class="text-[9px] font-bold tracking-widest text-purple-400 uppercase block mb-1">03 // Projects</span>
+          <span class="text-sm font-bold text-white flex justify-between items-center">Active Work <span class="group-hover:translate-x-1 transition-transform">&rarr;</span></span>
+        </button>
+      </div>
+
+      <!-- DESKTOP INTUITIVE BACKGROUND QUOTES LAYER -->
+      <div class="absolute top-[5%] left-[2%] hidden xl:block z-20 opacity-20 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
+        <button onclick="switchView('about')" class="text-left block focus:outline-none">
+          <div class="glass px-6 py-5 rounded-2xl max-w-[280px] rotate-[-2deg] border border-white/5 shadow-2xl">
+            <p class="text-xs text-slate-300 leading-relaxed font-medium">“The future belongs to people who can simplify complexity.”</p>
+            <div class="mt-3 text-[9px] font-bold uppercase tracking-wider text-blue-400">Read Journey &rarr;</div>
+          </div>
+        </button>
+      </div>
+
+      <div class="absolute top-[8%] right-[3%] hidden xl:block z-20 opacity-20 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
+        <button onclick="switchView('skills')" class="text-left block focus:outline-none">
+          <div class="glass px-6 py-5 rounded-2xl max-w-[260px] rotate-[2deg] border border-white/5 shadow-2xl">
+            <p class="text-xs text-slate-300 leading-relaxed font-medium">“Automation is removing unnecessary workplace friction.”</p>
+            <div class="mt-3 text-[9px] font-bold uppercase tracking-wider text-indigo-400">View Toolkit &rarr;</div>
+          </div>
+        </button>
+      </div>
+
+      <div class="absolute bottom-[5%] left-[4%] hidden xl:block z-20 opacity-20 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
+        <button onclick="switchView('initiatives')" class="text-left block focus:outline-none">
+          <div class="glass px-6 py-5 rounded-2xl max-w-[280px] rotate-[1deg] border border-white/5 shadow-2xl">
+            <p class="text-xs text-slate-300 leading-relaxed font-medium">“Every efficient system started as someone’s frustration.”</p>
+            <div class="mt-3 text-[9px] font-bold uppercase tracking-wider text-purple-400">Our Initiatives &rarr;</div>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- VIEW 2: ABOUT / STORY PANEL -->
+    <div id="view-about" class="view-section hidden w-full max-w-3xl glass rounded-2xl sm:rounded-[32px] p-6 sm:p-10 border border-white/10 shadow-2xl">
+      <div class="flex flex-row items-center justify-between gap-4 mb-8 border-b border-white/5 pb-4">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-blue-400 font-bold">My Journey</span>
+          <h2 class="text-xl sm:text-3xl font-black text-white mt-1">From Curiosity to Systems Thinking</h2>
+        </div>
+        <button onclick="switchView('home')" class="px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/5 text-slate-400 hover:text-white text-xs font-semibold tracking-wide transition-all shrink-0">
+          ← Escape
+        </button>
+      </div>
+
+      <div class="relative border-l border-white/10 pl-6 ml-1 flex flex-col gap-10">
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)]"></div>
+          <span class="text-xs uppercase tracking-[0.15em] text-slate-500 font-bold">Childhood Development</span>
+          <h3 class="text-lg font-bold text-white mt-1">Patterns & Sync Workflows</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">Music became one of my earliest passions. Beyond entertainment, processing piano composition patterns taught me structural synchronization, patience, and logic workflows.</p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.7)]"></div>
+          <span class="text-xs uppercase tracking-[0.15em] text-slate-500 font-bold">Academic Base</span>
+          <h3 class="text-lg font-bold text-white mt-1">Mathematics & Logic Arrays</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">Studying Mathematics deeply shaped my diagnostic abilities. It trained me to engineer deterministic data flows within chaotic, unoptimized enterprise environments.</p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.7)]"></div>
+          <span class="text-xs uppercase tracking-[0.15em] text-slate-500 font-bold">Professional Experience</span>
+          <h3 class="text-lg font-bold text-white mt-1">Finance, Clearing & Operations</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">Operating deep inside modern reconciliation desks exposed me directly to repetitive structural debt, operational backlogs, and costly settlement lag.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 3: INITIATIVES PANEL VIEW -->
+    <div id="view-initiatives" class="view-section hidden w-full max-w-2xl glass rounded-2xl sm:rounded-[32px] p-6 sm:p-10 border border-white/10 shadow-2xl">
+      <div class="flex flex-row items-center justify-between gap-4 mb-8">
+        <div class="text-left">
+          <span class="text-xs uppercase tracking-widest text-blue-400 font-bold">Strategic Portfolio</span>
+          <h2 class="text-xl sm:text-2xl font-black text-white mt-1">Active Initiatives</h2>
+        </div>
+        <button onclick="switchView('home')" class="px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/5 text-slate-400 hover:text-white text-xs font-semibold tracking-wide transition-all shrink-0">
+          ← Close
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-4 w-full">
+        <!-- TRIGGER LAZY-LOADED REALS VS REALS IFRAME VIEW -->
+        <button onclick="switchView('real-vs-reels')" class="w-full flex items-center justify-between p-4 sm:p-6 bg-white/5 hover:bg-blue-500/10 border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all duration-300 group text-left shadow-lg">
+          <div class="flex items-center gap-4 sm:gap-5">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 border border-blue-500/30 flex items-center justify-center text-lg shrink-0">
+              ℹ️
+            </div>
+            <div>
+              <h4 class="text-white font-bold text-base sm:text-lg group-hover:text-blue-400 transition-colors">Real Vs Reels</h4>
+              <p class="text-xs sm:text-sm text-slate-400 mt-0.5 sm:mt-1">Honest conversations about growth, careers, rejection, and becoming.</p>
+            </div>
+          </div>
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/5 group-hover:bg-blue-500 flex items-center justify-center text-slate-400 group-hover:text-white transition-all transform group-hover:translate-x-1 shrink-0 ml-2">
+            →
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- VIEW 4: DYNAMIC LAZY-LOADED IFRAME INTERACTIVE VIEWPORT -->
+    <div id="view-real-vs-reels" class="view-section hidden w-full max-w-5xl mx-auto px-1 sm:px-4 h-[82vh]">
+      <div class="flex flex-row justify-between items-center mb-4 gap-4">
+        <div>
+          <span class="text-[10px] font-bold tracking-wider text-blue-400 uppercase bg-blue-500/10 px-2.5 py-0.5 rounded-full border border-blue-500/20">System Application</span>
+          <h2 class="text-base sm:text-2xl font-black text-white mt-1">Real Vs Reels Portal</h2>
+        </div>
+        <button onclick="switchView('initiatives')" class="text-xs font-semibold text-slate-400 hover:text-white bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl transition-all shrink-0">
+          ← Return
+        </button>
+      </div>
+      
+      <div class="w-full h-full rounded-2xl border border-white/10 overflow-hidden shadow-2xl bg-[#070B14]">
+        <iframe 
+          id="gasIframe"
+          src="" 
+          class="w-full h-full border-none"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- VIEW 5: SKILLS VIEW -->
+    <div id="view-skills" class="view-section hidden w-full max-w-4xl glass rounded-2xl sm:rounded-[32px] p-6 sm:p-10 border border-white/10 shadow-2xl">
+      <div class="flex flex-row items-center justify-between gap-4 mb-8 border-b border-white/5 pb-4">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-blue-400 font-bold">Skills Matrix</span>
+          <h2 class="text-xl sm:text-3xl font-black text-white mt-1">Technical Stack</h2>
+        </div>
+        <button onclick="switchView('home')" class="px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/5 text-slate-400 hover:text-white text-xs font-semibold tracking-wide transition-all shrink-0">
+          ← Close
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-slate-900/30 p-5 rounded-xl border border-white/5">
+          <h3 class="text-base font-bold text-white mb-3 text-blue-400">⚡ Automation</h3>
+          <ul class="space-y-2 text-slate-400 text-xs font-medium">
+            <li>• Excel VBA Automation</li>
+            <li>• Google Sheets Scripting</li>
+            <li>• Office Process Flows</li>
+            <li>• C# Console Utilities</li>
+            <li>• Workflow Refactoring</li>
+          </ul>
+        </div>
+        
+        <div class="bg-slate-900/30 p-5 rounded-xl border border-white/5">
+          <h3 class="text-base font-bold text-white mb-3 text-indigo-400">📊 Ledger Control</h3>
+          <ul class="space-y-2 text-slate-400 text-xs font-medium">
+            <li>• SQL Queries & Views</li>
+            <li>• Settlement Verification</li>
+            <li>• Reconciliation Engines</li>
+            <li>• Exception Diagnostics</li>
+            <li>• Matrix Reporting</li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-900/30 p-5 rounded-xl border border-white/5">
+          <h3 class="text-base font-bold text-white mb-3 text-purple-400">🧠 Competencies</h3>
+          <ul class="space-y-2 text-slate-400 text-xs font-medium">
+            <li>• Analytical Diagnosis</li>
+            <li>• Critical Logic Core</li>
+            <li>• Piano Pattern Syncing</li>
+            <li>• Structural Architecture</li>
+            <li>• Core Problem Solves</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
