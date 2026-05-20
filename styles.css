@@ -1,47 +1,96 @@
-@charset "UTF-8";
+/**************************************************************
+  MOBILE-FIRST FOUNDATION & RESET
+**************************************************************/
+:root {
+  --mobile-padding: 16px;
+  --tablet-padding: 24px;
+  --desktop-padding: 32px;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.72);
+}
 
-/* ============================================================================
-   CORE LAYOUT OVERRIDES (Fixes content clipping and hidden sections)
-   ============================================================================ */
-html, body {
-  background-color: #020617;
-  min-height: 100%;
-  width: 100%;
-  overflow-x: hidden !important;
+* {
+  box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+  color: var(--text-primary);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Background animated element setup matching Real Vs Reels design identity */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.15) 0%, transparent 50%),
-              radial-gradient(circle at 10% 80%, rgba(88, 28, 135, 0.15) 0%, transparent 50%);
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Base structural properties for interactive panel cards */
-.view-section {
-  width: 100%;
-  opacity: 0;
-  transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
-}
-
-/* Glassmorphism Framework Primitive Utility */
+/**************************************************************
+  GLASS EFFECT & BACKGROUND OVERRIDES
+**************************************************************/
 .glass {
-  background: rgba(15, 23, 42, 0.45) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
-/* Touch targets configuration patches for mobile */
-button, a {
-  touch-action: manipulation;
+/* Fullscreen background controller with fixed image layer */
+.back-img {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background-image: linear-gradient(rgba(8, 12, 22, 0.85), rgba(15, 23, 42, 0.8)), 
+                    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/**************************************************************
+  BUTTONS & INTERACTIVE UTILITIES
+**************************************************************/
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Custom layout scrollbar design */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.2);
+  border-radius: 99px;
+  border: 2px solid #020617;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.45);
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/**************************************************************
+  VIEW ANIMATION TRANSITIONS
+**************************************************************/
+.view-section {
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
