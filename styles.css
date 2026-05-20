@@ -113,3 +113,21 @@ button:active {
     font-size: 85% !important; 
   }
 }
+
+/**************************************************************
+ MOBILE PROFESSIONAL BACKGROUND OVERRIDE
+**************************************************************/
+@media screen and (max-width: 768px) {
+  .back-img {
+    /* 
+       1. Keeps your dark glass overlay readable
+       2. Replaces the Unsplash beach photo with a professional tech-minimalist architecture grid 
+    */
+    background-image: linear-gradient(rgba(8, 12, 22, 0.90), rgba(15, 23, 42, 0.88)), 
+                      url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80');
+    
+    /* Disables fixed parallax attachment on mobile to stop stuttering and jumping layouts */
+    background-attachment: scroll !important;
+    background-position: center top;
+  }
+}
